@@ -1,8 +1,8 @@
-POST http://localhost:5000/api/login
+POST https://backend-boilerplate-teal.vercel.app/api/register
 Content-Type: application/json
 
 {
-    "username":"rahulsss",
+    "username":"rahulsssss",
     "password":"rahul@28"
 
 }
