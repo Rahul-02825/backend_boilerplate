@@ -16,14 +16,16 @@ app.use(cors());
   })();
 
 
-  app.get("/",(req, res) => {
+  app.get("/", (req, res) => {
     res.send("Hello from Express on Vercel!");
   });
-
+  
 // Registration Endpoint
 app.post("/api/register", async (req, res) => {
   try {
+    console.log("hello")
     const { username, password } = req.body;
+    console.log(username,password)
 
     // Check if user already exists
     const existingUser = await User.findOne({ username });
@@ -75,4 +77,9 @@ app.get("/api/protected", authenticateToken, (req, res) => {
 });
 
 // Start the server
+// const PORT = 5000;
+// app.listen(PORT, () => {
+//   console.log(`Server running on http://localhost:${PORT}`);
+// });
+
 module.exports=app
