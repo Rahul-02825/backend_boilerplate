@@ -8,6 +8,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json()); // Middleware to parse JSON requests
 app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to database
 (async () => {
