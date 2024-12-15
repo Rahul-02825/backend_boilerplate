@@ -16,7 +16,7 @@ app.use(cors());
   })();
 
 
-  app.get("/",async (req, res) => {
+  app.get("/",(req, res) => {
     res.send("Hello from Express on Vercel!");
   });
 
@@ -75,4 +75,4 @@ app.get("/api/protected", authenticateToken, (req, res) => {
 });
 
 // Start the server
-module.exports=app  
+module.exports=app
