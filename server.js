@@ -16,7 +16,7 @@ app.use(cors());
   })();
 
 
-  app.get("/", (req, res) => {
+  app.get("/",async (req, res) => {
     res.send("Hello from Express on Vercel!");
   });
 
