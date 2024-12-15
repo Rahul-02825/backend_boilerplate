@@ -1,0 +1,8 @@
+GET http://localhost:5000/api/protected
+# Content-Type: application/json
+
+# {
+#     "username":"rahulsss",
+#     "password":"rahul@28"
+
+# }
