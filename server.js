@@ -8,12 +8,17 @@ require("dotenv").config();
 const app = express();
 app.use(express.json()); // Middleware to parse JSON requests
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to database
 (async () => {
     await connectDB();
   })();
+
+
+  app.get("/", (req, res) => {
+    res.send("Hello from Express on Vercel!");
+  });
 
 // Registration Endpoint
 app.post("/api/register", async (req, res) => {
@@ -70,7 +75,4 @@ app.get("/api/protected", authenticateToken, (req, res) => {
 });
 
 // Start the server
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+module.exports=app  
